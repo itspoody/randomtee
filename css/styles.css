@@ -1,0 +1,194 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #87ceeb; /* Light blue background */
+    color: #333; /* Dark text for contrast */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header styles */
+header {
+    position: relative;
+    margin-top: 40px;
+    height: 500px; /* Adjust height to fit the logo/pinwheel/placeholder area */
+}
+
+/* Logo, Pinwheel, Placeholder styles */
+#logo, #pinwheel, #placeholder {
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#logo {
+    transition: opacity 1s ease-in-out;
+}
+
+#pinwheel {
+    width: 150px; /* 50% larger size for pinwheel */
+    transition: opacity 2s ease-in-out, transform 2s ease-in-out; /* Gradual fade-in and transform transition */
+    animation: spin 2s linear infinite; /* Add spin animation */
+}
+
+#placeholder {
+    transition: opacity 3s ease-in-out; /* Slow fade in for placeholder */
+}
+
+#pinwheel, #placeholder {
+    display: none; /* Initially hidden */
+}
+
+/* Keyframes for pinwheel spin animation */
+@keyframes spin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Keyframes for pinwheel size animation */
+@keyframes enlarge {
+    from { transform: translate(-50%, -50%) scale(0); }
+    to { transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes shrink {
+    from { transform: translate(-50%, -50%) scale(1); }
+    to { transform: translate(-50%, -50%) scale(0); }
+}
+
+/* Search bar styles */
+.search-bar {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    padding-top: 20px; /* Add padding to ensure space from the header */
+}
+
+.search-bar, .buttons {
+    transition: opacity 1s ease-in-out; /* Transition for transparency */
+}
+
+/* Loading styles */
+#loading {
+    display: none; /* Initially hidden */
+    margin-top: 20px;
+    opacity: 0; /* Start with opacity 0 for transition effect */
+    transition: opacity 0.5s ease-in-out; /* Transition for opacity */
+}
+
+#loading.active {
+    display: block; /* Show loading message when active */
+    opacity: 1; /* Fully opaque when active */
+}
+
+.loading p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.loading progress {
+    width: 100px;
+    height: 20px;
+}
+
+/* Input styles */
+input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border: 2px solid #333; /* Dark border */
+    border-radius: 5px; /* Rounded corners */
+    box-sizing: border-box;
+    color: #333; /* Default text color */
+    transition: opacity 1s ease-in-out; /* Transition for transparency */
+}
+
+input[type="text"]::placeholder {
+    color: #aaa; /* Light grey placeholder text */
+    font-style: italic;
+}
+
+/* Buttons styles */
+.buttons {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Add gap between buttons */
+    padding-top: 20px; /* Add padding to ensure space from the search bar */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: #fff; /* White text */
+    flex: 1; /* Make buttons take equal width */
+    box-sizing: border-box;
+    transition: background-color 0.2s ease, transform 0.2s ease, opacity 1s ease-in-out; /* Smooth transition */
+}
+
+button:active {
+    transform: translateY(2px); /* Indented look on press */
+}
+
+button:hover {
+    background-color: #555; /* Darker background on hover */
+}
+
+#generate {
+    background-color: #32cd32; /* Lime green */
+}
+
+#generate:hover {
+    background-color: #2a9d2a; /* Darker lime green on hover */
+}
+
+#im-feeling {
+    background-color: #ff6347; /* Tomato red */
+}
+
+#im-feeling:hover {
+    background-color: #e55337; /* Darker tomato red on hover */
+}
+
+/* Footer styles */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #87ceeb; /* Same background color as body */
+    z-index: 10;
+    text-align: center;
+    opacity: 1; /* Ensure footer is fully opaque */
+}
+
+#copyright {
+    font-size: 14px;
+    color: #333; /* Dark text color */
+    user-select: none; /* Prevent text selection */
+    animation: colorChange 5s infinite; /* Add animation for color change */
+    text-transform: lowercase; /* Lowercase text */
+    opacity: 1; /* Ensure text is fully opaque */
+}
+
+/* Keyframes for color change animation */
+@keyframes colorChange {
+    0% { color: #ff0000; } /* Red */
+    25% { color: #00ff00; } /* Green */
+    50% { color: #0000ff; } /* Blue */
+    75% { color: #ffff00; } /* Yellow */
+    100% { color: #ff0000; } /* Red */
+}

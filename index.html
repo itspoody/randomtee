@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>randomtee</title>
+    <link rel="icon" href="favicon/favicon_16x16.ico" sizes="16x16" type="image/x-icon">
+    <link rel="icon" href="favicon/favicon_32x32.ico" sizes="32x32" type="image/x-icon">
+    <link rel="icon" href="favicon/favicon_48x48.ico" sizes="48x48" type="image/x-icon">
+    <link rel="icon" href="favicon/favicon_64x64.ico" sizes="64x64" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <!-- Logo, Pinwheel, Placeholder -->
+        <img src="images/logo.png" alt="logo" id="logo">
+        <img src="images/pinwheel.png" alt="pinwheel" id="pinwheel">
+        <img src="images/placeholder.png" alt="placeholder" id="placeholder">
+    </header>
+
+    <!-- Search bar and buttons -->
+    <div class="search-bar">
+        <input type="text" id="prompt" placeholder="let's enter a prompt">
+    </div>
+    <div class="buttons">
+        <button id="generate">generate</button>
+        <button id="im-feeling">i'm feeling...</button>
+    </div>
+
+    <!-- Loading animation -->
+    <div id="loading" class="loading">
+        <p>please wait...</p>
+        <progress></progress>
+    </div>
+
+    <footer>
+        <p id="copyright">© 2024 randomtee</p>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script type="module" src="js/utils.js"></script>
+    <script type="module" src="js/domUpdates.js"></script>
+    <script type="module" src="js/loadingAnimation.js"></script>
+    <script type="module" src="js/fadeEffects.js"></script>
+    <script type="module" src="js/texts.js"></script>
+    <script type="module" src="js/adjectives.js"></script>
+    <script type="module" src="js/nouns.js"></script>
+    <script type="module" src="js/events.js"></script>
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>
